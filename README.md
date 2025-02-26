@@ -104,6 +104,8 @@ iot 개발자 데이터베이스 저장소
     +--------------------+
     4 rows in set (0.01 sec)
     ```
+    
+<img src="./images/db001.png" width="700">
 
 - Workbench 설치
     - https://dev.mysql.com/downloads/workbench/ MySQL Workbench 8.0.41 설치
@@ -174,7 +176,7 @@ iot 개발자 데이터베이스 저장소
             - GRANT, REVOKE
     
     - DML 중 SELECT 
-    
+
         ```sql
         -- SLECT 문 기본문법
         SELECT [ALL|DISTINCT] 컬럼명(들)
@@ -186,8 +188,8 @@ iot 개발자 데이터베이스 저장소
         [WITH ROLLUP]
         ```
 
-    - 쿼리 연습(정렬까지) : [SQL](./day02/db02_select.sql)
-    - 쿼리 연습(집계함수부터) : [SQL](./day02/db03_select_집계함수.sql)
+        - 쿼리 연습(정렬까지) : [SQL](./day02/db02_select.sql)
+        - 쿼리 연습(집계함수부터) : [SQL](./day02/db03_select_집계함수.sql)
 
 
 
@@ -195,3 +197,6 @@ iot 개발자 데이터베이스 저장소
 - SQL 기초
     - DDL
     - DML 중 INSERT, UPDATE, DELETE
+
+- SQL 고급
+    - 
