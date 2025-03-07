@@ -267,52 +267,53 @@ iot 개발자 데이터베이스 저장소
     <img src='./images/db004.png' width='600'>
 
 
-        - DDL 중 ALTER
-            ``` sql
-            ALTER DATABASE 데이터베이스명
-                [몇 가지 사항];
+    - DDL 중 ALTER
+        ``` sql
+        ALTER DATABASE 데이터베이스명
+            [몇 가지 사항];
 
-            ALTER TABLE 테이블명
-                [ADD 속성명 데이터타입]
-                [DROP COLUMN 속성명]
-                [ALTER COLUMN 속성명 데이터타입]
-                -- ...
-            ```
+        ALTER TABLE 테이블명
+            [ADD 속성명 데이터타입]
+            [DROP COLUMN 속성명]
+            [ALTER COLUMN 속성명 데이터타입]
+            -- ...
+        ```
             
 
 
-        - DDL 중 DROP
-            ``` sql
-            DROP [DATABASE|TABLE|INDEX|...] 개체명
-            ```
-            - 테이블 삭제. 복구 안됨! 백업 필수
+    - DDL 중 DROP
+        ``` sql
+        DROP [DATABASE|TABLE|INDEX|...] 개체명
+        ```
+        - 테이블 삭제. 복구 안됨! 백업 필수
 
-        - DML 중 INSERT, UPDATE, DELETE : [SQL](./day03/db02_dml_query.sql)
-            ``` sql
-            -- 삽입
-            INSERT INTO 테이블명 [(컬럼리스트)]
-            VALUES (값리스트);
+    - DML 중 INSERT, UPDATE, DELETE : [SQL](./day03/db02_dml_query.sql)
 
-            -- 다른 테이블의 데이터 가져오기
-            INSERT INTO 테이블명 [(컬럼리스트)]
-            SELECT 컬럼리스트 FROM 테이블명
-            [WHERE 조건];
+        ``` sql
+        -- 삽입
+        INSERT INTO 테이블명 [(컬럼리스트)]
+        VALUES (값리스트); -- VALUE 는 SQL 표준이 아님(MySQL, PostgreSQL)
 
-            -- 수정
-            UPDATE 테이블명
-            SET 속성 = 값
-                [, 속성 = 값]
-            WHERE 조건;
+        -- 다른 테이블의 데이터 가져오기
+        INSERT INTO 테이블명 [(컬럼리스트)]
+        SELECT 컬럼리스트 FROM 테이블명
+        [WHERE 조건];
 
-            -- 삭제
-            DELETE FROM 테이블명
-            WHERE 조건;
-            ```
-            - INSERT 데이터 삽입, 새로운 데이터 생성
-            - UPDATE 데이터 수정, 기존 데이터 변경
-            - DELETE 데이터 삭제
-            - `UPDATE와 DELETE는 WHERE절 없이 사용하면 문제 발생 위험!!!`
-                - 트랜잭션을 사용하지 않으면 복구가 어려움 **(조심할 것)**
+        -- 수정
+        UPDATE 테이블명
+        SET 속성 = 값
+            [, 속성 = 값]
+        WHERE 조건;
+
+        -- 삭제
+        DELETE FROM 테이블명
+        WHERE 조건;
+        ```
+        - INSERT 데이터 삽입, 새로운 데이터 생성
+        - UPDATE 데이터 수정, 기존 데이터 변경
+        - DELETE 데이터 삭제
+        - `UPDATE와 DELETE는 WHERE절 없이 사용하면 문제 발생 위험!!!`
+            - 트랜잭션을 사용하지 않으면 복구가 어려움 **(조심할 것)**
 
 - SQL 고급
     - 내장함수, NULL : [SQL](./day03/db03_sql_고급.sql)
@@ -433,6 +434,13 @@ iot 개발자 데이터베이스 저장소
 
 
 ## 7일차 
+- Workbench Tip
+    - SQL 툴 공통으로 SELECT 실행시, 모든 행을 다 표시하지 않음(성능저하 대비)
+    - Workbench 는 1000개로 제한
+    - menu `edit > preferences > SQL Editor > SQL Execution 에서 Limit Rows Count` 를 조절
+
+    <img src="./images/db005.png" width="600">
+
 - 인덱스 실습 : [SQL](./day07/db01_인덱스연습.sql)
     - 500만건 조회시 price로 검색
         - 인덱스가 없으면 대략 0.67초 소요
@@ -446,12 +454,25 @@ iot 개발자 데이터베이스 저장소
 
 
 ## 8일차 
-- 실무 실습 : [SQL]()
+- 실무 실습 : [SQL](./day08/db01_쿼리실습.sql)
     - 서브쿼리부터 
 - 데이터모델링 실습
-- 파이썬 GUI DB 연동
+    - 병워업무관리 ERD  
+        - 요구사항으로 개체와 관계를 정립. 계체에 속하는 속성들, 식별자 결정
+        - 테이블 명세서 작성 (엑셀,워드)
+        - ERwin | Workbench 모델링에서 ERD 작성
+        - 생성스크립트 : [SQL](./day08/db03_병원업무관리_스키마.sql) 
+        - Workbench DB 생성 후, 위 스크립트 실행 > DB 구현
+
+    <img src="./images/db006.png" width="600">
+    
+    - SQL 연습
+
+
+
 
 
 ## 9일차
+- tkinter DB 연동 GUI앱 개발 
 - 코딩테스트
 
