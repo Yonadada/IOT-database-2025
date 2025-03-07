@@ -216,12 +216,11 @@ iot 개발자 데이터베이스 저장소
         2. Create Connection 클릭
         3. 정보 입력 > 연결 테스트
 
-            <img src='./image/db002.png' width='600'>
-
+        <img src='./images/db002.png' width='600'>
 
         4. Workbench 처럼 사용
 
-            <img src='./image/db003.png' width='600'>
+        <img src='./images/db003.png' width='600'>
 
 
 - SQL 기초
